@@ -4,19 +4,13 @@
     /// <typeparam name="T"></typeparam>
     public interface IDynamicArray<T> : IEnumerable<T>
     {
-        /// <summary>
-        /// Gets the number of elements contained in the collection.
-        /// </summary>
+        /// <summary>Gets the number of elements contained in the collection.</summary>
         int Count { get; }
 
-        /// <summary>
-        /// Gets the currently allocated capacity.
-        /// </summary>
+        /// <summary>Gets the currently allocated capacity.</summary>
         int Capacity { get; }
 
-        /// <summary>
-        /// Adds the specified item to the collection.
-        /// </summary>
+        /// <summary>Adds the specified item to the collection.</summary>
         /// <param name="item">The item to add to the collection.</param>
         void Add(T item);
 
@@ -53,6 +47,13 @@
         /// <returns>The element of type T at the specified index.</returns>
         T Get(int index);
 
+        /// <summary>
+        /// Removes all items from the collection.
+        /// </summary>
+        /// <remarks>
+        ///     After calling this method, the collection will be empty. This method does not modify
+        ///     the capacity of the collection, if applicable.
+        /// </remarks>
         void Clear();
     }
 }
