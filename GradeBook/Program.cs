@@ -1,4 +1,6 @@
-﻿namespace GradeBook
+﻿using GradeBook.DataStructures;
+
+namespace GradeBook
 {
     internal class Program
     {
