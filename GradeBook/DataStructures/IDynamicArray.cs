@@ -38,6 +38,15 @@
 		/// <returns>The element of type T at the specified index.</returns>
 		T Get(int index);
 
+		/// <summary>Searches for the first occurrence of <paramref name="item"/> using linear search.</summary>
+		/// <param name="item">The item to search for in the collection.</param>
+		/// <returns>The zero-based index of the item if it's found in the collection, -1 if not</returns>
+		/// <remarks>
+		///		Callers should use <see cref="IDynamicArray{T}.Contains(T)"/> if only checking
+		///		if the element is in the collection is needed.
+		/// </remarks>
+		int IndexOf(T item);
+
 		/// <summary>Inserts an item into the collection at the specified index, shifting elements to the right.</summary>
 		/// <remarks>
 		///     Subsequent items are shifted to accommodate the new item. If the index is equal to

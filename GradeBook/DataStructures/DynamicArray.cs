@@ -2,7 +2,7 @@
 
 namespace GradeBook.DataStructures
 {
-	public class DynamicArray<T> : IDynamicArray<T> where T : IComparable<T>
+	public sealed class DynamicArray<T> : IDynamicArray<T> where T : IComparable<T>
 	{
 		#region Constructors
 		/// <summary>
@@ -123,13 +123,7 @@ namespace GradeBook.DataStructures
 			}
 		}
 
-		/// <summary>Searches for the first occurrence of <paramref name="item"/> using linear search.</summary>
-		/// <param name="item">The item to search for in the collection.</param>
-		/// <returns>The zero-based index of the item if it's found in the collection, -1 if not</returns>
-		/// <remarks>
-		///		Callers should use <see cref="IDynamicArray{T}.Contains(T)"/> if only checking
-		///		if the element is in the collection is needed.
-		/// </remarks>
+		/// <inheritdoc/>
 		public int IndexOf(T item)
 		{
 			var comparer = EqualityComparer<T>.Default;
