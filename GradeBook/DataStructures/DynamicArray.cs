@@ -61,6 +61,7 @@ namespace GradeBook.DataStructures
 
 			while (low <= high)
 			{
+				// Protection from integer overflow.
 				int midpoint = low + (high - low) / 2;
 				int comparison = this.data[midpoint].CompareTo(item);
 
@@ -174,7 +175,7 @@ namespace GradeBook.DataStructures
 				int j = i - 1;
 
 				// Shift elements greater than key one position to the right.
-				while (j >= 0 && this.data[j].CompareTo(key) < 0)
+				while (j >= 0 && this.data[j].CompareTo(key) > 0)
 				{
 					this.data[j + 1] = this.data[j];
 					j--;
